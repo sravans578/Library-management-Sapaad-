@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
  #get 'assign/display'
-match ':controller(/:action(/:id))', :via => :get
+#match ':controller(/:action(/:id))', :via => :get
+get "/home/sravan/sapaad/app/views/assign/display.html.erb", to: "assign#display", as: "display"
   resources :issues
   resources :books
   resources :users
