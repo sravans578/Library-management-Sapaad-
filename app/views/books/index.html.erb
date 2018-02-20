@@ -26,7 +26,7 @@
         <td><%= link_to 'View more', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Assign book', {:controller => 'assign', :action => 'display'} %></td>
+        <td><%= link_to 'Assign book', display_path %></td>
       </tr>
     <% end %>
   </tbody>
