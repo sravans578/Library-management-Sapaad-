@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<span><%= link_to 'Registered students', users_path %> </span>
+
+<span style="margin-left:50px;"><%= link_to 'Books', books_path %></span> 
+
+<h1>Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bookname</th>
+      <th>Author</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.bookname %></td>
+        <td><%= book.author %></td>
+        <td><%=h truncate(book.description, :length => 50) %></td>
+        <td><%= book.user_id %></td>
+        <td><%= link_to 'View more', book %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Assign book', {:controller => 'assign', :action => 'display'} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>
