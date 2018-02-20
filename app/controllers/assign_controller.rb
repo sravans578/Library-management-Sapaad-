@@ -1,6 +1,9 @@
 class AssignController < ApplicationController
   def display
-  	 puts "Just do it" 
+  	
+    @users = User.all
+  
+
 
   end
 end
